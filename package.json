@@ -1,6 +1,6 @@
 {
   "engines": {
-    "composer": "0.19.4"
+    "composer": "^0.19.1"
   },
   "name": "blockchain-app",
   "version": "0.0.5",
