@@ -1,0 +1,58 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/**
+ * Write your model definitions here
+ */
+
+namespace org.blockchain.unichain
+
+asset Class identified by classId{
+  o String classId
+  o String class_name
+  o Boolean active
+  o String otp optional
+  --> Tutor instructor
+  --> Student[] attendees optional
+  o Integer total_attendees
+}
+
+participant Student identified by studentId {
+  o String studentId
+  o String firstName
+  o String lastName
+}
+participant Tutor identified by tutorId {
+  o String tutorId
+  o String firstName
+  o String lastName
+}
+
+transaction registerAttendance {
+  --> Class practical
+  --> Student attendee
+}
+
+transaction endSession {
+  --> Class practical
+}
+
+
+event AttendanceRegistered {
+  --> Class practical
+}
+
+event SessionEnded {
+  --> Class practical
+}
